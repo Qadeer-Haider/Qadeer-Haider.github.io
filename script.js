@@ -261,7 +261,7 @@ function initTerminalTyping() {
     const typingCode = document.getElementById('typing-code');
     if (!typingCode) return;
 
-    const codeText = 'Epoch 5/10 - Loss: 0.0234 - Accuracy: 98.12% - Val_Acc: 97.89%';
+    const codeText = 'Epoch 450/500 - Loss: 0.0012 - Accuracy: 99.87% - Val_Acc: 99.45%';
     let charIndex = 0;
 
     function typeCode() {
