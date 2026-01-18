@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Qadeer Haider - Data Scientist, Machine Learning Engineer & AI Enthusiast. Portfolio showcasing computer vision, deep learning, and machine learning projects.">
+    <title>Qadeer Haider | Data Scientist & ML Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">QH</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 54 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="9" stroke-linecap="round" style="opacity: 0.9" />
+                    <path d="M16 16l3.5 3.5" stroke-linecap="round" />
+                    <path d="M32 3v18M44 3v18M32 12h12" stroke-linecap="round" />
+                </svg>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>Home</a></li>
+                <li><a href="#about" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>About</a></li>
+                <li><a href="#skills" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                        </svg>Skills</a></li>
+                <li><a href="#projects" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>Projects</a></li>
+                <li><a href="#github-stats" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>GitHub</a></li>
+                <li><a href="#contact" class="nav-link nav-contact"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Brain Image Background removed -->
+
+
+        <div class="hero-grid">
+            <!-- Left Side: Text Content -->
+            <div class="hero-content">
+                <p class="hero-greeting">✦ Building AI-Powered Solutions</p>
+                <h1 class="hero-name">
+                    <span class="name-line">Hi, I'm</span>
+                    <span class="name-line accent">Qadeer Haider</span>
+                </h1>
+                <p class="hero-title">Data Scientist | Machine Learning Engineer | AI Enthusiast</p>
+                <p class="hero-intro">
+                    Transforming data into intelligent solutions through the power of
+                    <span class="highlight">Machine Learning</span>,
+                    <span class="highlight">Computer Vision</span>, and
+                    <span class="highlight">Deep Learning</span>.
+                </p>
+                <div class="typing-container">
+                    <span class="typing-prefix">Specialized in: </span>
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+
+            <!-- Right Side: Animated Terminal with Brain -->
+            <div class="hero-showcase">
+                <!-- Brain Image Background -->
+                <div class="brain-container">
+                    <img src="assets/Brain.png" alt="Neural Network Brain" class="brain-image">
+                </div>
+
+                <!-- Floating Bubble Icons -->
+                <div class="floating-icon icon-1" title="GPU Processing">
+                    <img src="assets/Chip_Icon.png" alt="CPU Chip">
+                </div>
+                <div class="floating-icon icon-2" title="Image Recognition">
+                    <img src="assets/Image_Recognzation_Icon.png" alt="Image Recognition">
+                </div>
+                <div class="floating-icon icon-3" title="Deep Learning">
+                    <img src="assets/Neural_Network_Icon.png" alt="Neural Network">
+                </div>
+                <div class="floating-icon icon-4" title="Python">
+                    <img src="assets/Python_Logo_Icon.png" alt="Python">
+                </div>
+
+                <!-- Terminal Window -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <div class="terminal-title">brain_tumor_detection.py</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="code-line">
+                            <span class="keyword">import</span> <span class="module">cv2</span><span
+                                class="operator">,</span> <span class="module">numpy</span> <span
+                                class="keyword">as</span> <span class="module">np</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="keyword">from</span> <span class="module">tensorflow.keras</span> <span
+                                class="keyword">import</span> <span class="class">Sequential</span>
+                        </div>
+                        <div class="code-line comment"># Load MRI dataset for tumor detection</div>
+                        <div class="code-line">
+                            <span class="variable">model</span> <span class="operator">=</span> <span
+                                class="class">Sequential</span>([
+                        </div>
+                        <div class="code-line indent">
+                            <span class="class">ResNet50</span>(weights<span class="operator">=</span><span
+                                class="string">'imagenet'</span>)<span class="operator">,</span>
+                        </div>
+                        <div class="code-line indent">
+                            <span class="class">Dense</span>(<span class="number">4</span><span
+                                class="operator">,</span> activation<span class="operator">=</span><span
+                                class="string">'softmax'</span>)
+                        </div>
+                        <div class="code-line">])</div>
+                        <div class="code-line comment"># Training ResUNet segmentation...</div>
+                        <div class="code-line">
+                            <span class="output">▓</span><span class="typing-code" id="typing-code"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-accent"></span> About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p class="about-intro">Aspiring <span class="highlight">Data Scientist</span> with a knack for
+                        computer vision, machine learning, and deep learning.</p>
+                    <p>I'm passionate about leveraging artificial intelligence to solve real-world problems. From
+                        medical imaging to game AI, I love exploring how data and algorithms can create impactful
+                        solutions.</p>
+                    <div class="about-location">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>Lahore, Pakistan</span>
+                    </div>
+                </div>
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Repositories</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="4">0</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Following</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-accent"></span> Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3 class="category-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                        Programming Languages
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Python</span><span>95%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>C++</span><span>75%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3 class="category-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        Machine Learning
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>TensorFlow</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Keras</span><span>88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Scikit-learn</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3 class="category-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="4" />
+                            <line x1="21.17" y1="8" x2="12" y2="8" />
+                            <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                            <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+                        </svg>
+                        Computer Vision
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>OpenCV</span><span>92%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MediaPipe</span><span>80%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3 class="category-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
+                        Data Science
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Pandas</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>NumPy</span><span>88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Matplotlib/Seaborn</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Plotly</span><span>78%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3 class="category-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                        </svg>
+                        Databases
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MySQL</span><span>75%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MongoDB</span><span>70%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3 class="category-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                        Tools
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Jupyter Notebook</span><span>95%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>VS Code</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Git/GitHub</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-accent"></span> Featured Projects
+            </h2>
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                <button class="filter-btn" data-filter="computer-vision">Computer Vision</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card reveal" data-category="deep-learning">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">🧠</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Assisted Brain Tumor Localization</h3>
+                        <p class="project-description">Achieved 98% accuracy using ResNet and ResUNet models for MRI
+                            classification and segmentation of brain tumors.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Medical Imaging</span>
+                        </div>
+                        <a href="https://github.com/Qadeer-Haider" class="project-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card reveal" data-category="computer-vision">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">✋</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Handy Tic-Tac-Toe AI</h3>
+                        <p class="project-description">Hand gesture-based game using OpenCV, MediaPipe, and Alpha-Beta
+                            Pruning algorithm for intelligent gameplay.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                        <a href="https://github.com/Qadeer-Haider" class="project-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card reveal" data-category="deep-learning">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">🔬</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Next-Gen Malaria Diagnostics</h3>
+                        <p class="project-description">Achieved 96.61% accuracy with AlexNet architecture for
+                            classifying malaria-infected cells from microscopy images.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Image Classification</span>
+                            <span class="tech-tag">AlexNet</span>
+                        </div>
+                        <a href="https://github.com/Qadeer-Haider" class="project-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card reveal" data-category="deep-learning">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">🎨</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Dreamscape Motion with DeepDream</h3>
+                        <p class="project-description">Creating dynamic, surreal visuals using DeepDream algorithm and
+                            InceptionV3 neural network architecture.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Neural Networks</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">InceptionV3</span>
+                        </div>
+                        <a href="https://github.com/Qadeer-Haider" class="project-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card reveal" data-category="data-analysis">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">🚢</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Titanic Data Analysis & Prediction</h3>
+                        <p class="project-description">Comprehensive exploratory data analysis and machine learning
+                            models for survival prediction on the Titanic dataset.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                        <a href="https://github.com/Qadeer-Haider" class="project-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card reveal" data-category="machine-learning">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-icon">🏠</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">House Price Prediction</h3>
+                        <p class="project-description">Machine learning models to predict house prices with
+                            comprehensive feature engineering and evaluation metrics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Regression</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                        <a href="https://github.com/Qadeer-Haider" class="project-link" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats Section -->
+    <section class="github-stats" id="github-stats">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-accent"></span> GitHub Activity
+            </h2>
+            <div class="stats-grid">
+                <div class="stats-card reveal">
+                    <div class="stats-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </div>
+                    <h3>Top Languages</h3>
+                    <div class="language-bars">
+                        <div class="lang-item">
+                            <span class="lang-name">Python</span>
+                            <div class="lang-bar">
+                                <div class="lang-progress" style="width: 85%"></div>
+                            </div>
+                            <span class="lang-percent">85%</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Jupyter Notebook</span>
+                            <div class="lang-bar">
+                                <div class="lang-progress jupyter" style="width: 10%"></div>
+                            </div>
+                            <span class="lang-percent">10%</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">C++</span>
+                            <div class="lang-bar">
+                                <div class="lang-progress cpp" style="width: 5%"></div>
+                            </div>
+                            <span class="lang-percent">5%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-card contribution-card reveal">
+                    <h3>Contribution Graph</h3>
+                    <div class="contribution-grid" id="contribution-grid"></div>
+                    <div class="contribution-legend">
+                        <span>Less</span>
+                        <div class="legend-squares">
+                            <div class="legend-square" style="--level: 0"></div>
+                            <div class="legend-square" style="--level: 1"></div>
+                            <div class="legend-square" style="--level: 2"></div>
+                            <div class="legend-square" style="--level: 3"></div>
+                            <div class="legend-square" style="--level: 4"></div>
+                        </div>
+                        <span>More</span>
+                    </div>
+                </div>
+                <div class="stats-card streak-card reveal">
+                    <div class="streak-item">
+                        <div class="streak-number" data-target="127">0</div>
+                        <div class="streak-label">Total Contributions</div>
+                    </div>
+                    <div class="streak-item">
+                        <div class="streak-number" data-target="15">0</div>
+                        <div class="streak-label">Current Streak 🔥</div>
+                    </div>
+                    <div class="streak-item">
+                        <div class="streak-number" data-target="28">0</div>
+                        <div class="streak-label">Longest Streak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-accent"></span> Get In Touch
+            </h2>
+            <p class="contact-intro reveal">I'm always open to discussing new projects, creative ideas, or opportunities
+                to be part of your vision.</p>
+            <div class="contact-content">
+                <div class="contact-info reveal">
+                    <a href="mailto:qhaider4622@gmail.com" class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">qhaider4622@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/qadeer-haider" class="contact-item" target="_blank" rel="noopener">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">linkedin.com/in/qadeer-haider</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Qadeer-Haider" class="contact-item" target="_blank" rel="noopener">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/Qadeer-Haider</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">QH</div>
+                <nav class="footer-nav">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://github.com/Qadeer-Haider" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/qadeer-haider" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:qhaider4622@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Qadeer Haider. All rights reserved.</p>
+                <p class="made-with">Made with <span class="heart">♥</span> and lots of ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
