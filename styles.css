@@ -1418,7 +1418,326 @@ section {
 }
 
 /* ============================================
-   GitHub Stats Section
+   Experience Section
+   ============================================ */
+.experience {
+    background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+}
+
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.experience-card {
+    background: rgba(13, 26, 45, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-left: 4px solid var(--color-blue-primary);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.experience-card:hover {
+    border-color: var(--color-blue-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 102, 255, 0.25);
+}
+
+.exp-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: var(--spacing-lg);
+}
+
+.exp-icon {
+    font-size: 2.8rem;
+    filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.4));
+}
+
+.exp-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.exp-info h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    background: linear-gradient(135deg, var(--color-blue-primary), var(--color-blue-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.exp-company {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.exp-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: right;
+}
+
+.exp-date {
+    color: var(--color-blue-primary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.exp-location {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.exp-body {
+    padding-top: var(--spacing-sm);
+}
+
+.exp-specialization {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1rem;
+    padding-left: var(--spacing-sm);
+    border-left: 2px solid var(--color-blue-primary);
+}
+
+.exp-specialization strong {
+    color: var(--color-text-primary);
+}
+
+/* Timeline Elements (Hidden) */
+.timeline-line {
+    display: none;
+}
+
+.timeline-node {
+    display: none;
+}
+
+.timeline-node {
+    position: absolute;
+    left: -32px;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background: var(--color-blue-primary);
+    border: 3px solid var(--color-bg-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.6), 0 0 30px rgba(0, 102, 255, 0.3);
+    z-index: 2;
+}
+
+.experience-card {
+    position: relative;
+    margin-left: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 0;
+    transition: var(--transition-normal);
+    animation: fadeInUp 0.6s ease forwards;
+    overflow: hidden;
+}
+
+.experience-card:hover {
+    border-color: var(--color-blue-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 212, 255, 0.15);
+}
+
+.exp-content {
+    padding: var(--spacing-xl);
+}
+
+/* Meta Icons */
+.meta-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+    stroke: var(--color-blue-accent);
+}
+
+.exp-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.exp-info h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    background: linear-gradient(135deg, var(--color-blue-primary), var(--color-blue-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.exp-company {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.exp-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: right;
+}
+
+.exp-date,
+.exp-location {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.exp-date {
+    color: var(--color-blue-primary);
+    font-weight: 600;
+}
+
+.exp-specialization {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--color-blue-accent);
+}
+
+.exp-specialization strong {
+    color: var(--color-text-primary);
+}
+
+/* Metric Badges */
+.exp-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.metric-badge {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+    padding: var(--spacing-md);
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    transition: var(--transition-normal);
+}
+
+.metric-badge:hover {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: var(--color-blue-accent);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.metric-badge.featured {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 212, 255, 0.1));
+    border-color: var(--color-blue-accent);
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-blue-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.metric-detail {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+/* Key Contributions */
+.exp-contributions {
+    margin-bottom: var(--spacing-lg);
+}
+
+.exp-contributions h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.exp-contributions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-contributions li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.exp-contributions li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-blue-primary);
+    font-weight: bold;
+}
+
+.exp-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+
+
+/* ============================================
+   GitHub Stats Section (Legacy)
    ============================================ */
 .github-stats {
     background: var(--color-bg-primary);
