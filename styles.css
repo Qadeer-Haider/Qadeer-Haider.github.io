@@ -2,17 +2,17 @@
    CSS Variables & Base Styles
    ============================================ */
 :root {
-    /* Colors */
-    --color-bg-primary: #000000;
-    --color-bg-secondary: #0a0a0a;
-    --color-bg-tertiary: #1a1a1a;
-    --color-blue-primary: #0066ff;
-    --color-blue-secondary: #00aaff;
-    --color-blue-accent: #00ffff;
-    --color-blue-dark: #3366cc;
+    /* Colors - Dark Navy/Teal Theme */
+    --color-bg-primary: #0a1628;
+    --color-bg-secondary: #0d1a2d;
+    --color-bg-tertiary: #132238;
+    --color-blue-primary: #1e90ff;
+    --color-blue-secondary: #00d4ff;
+    --color-blue-accent: #3eb8b8;
+    --color-blue-dark: #1a5a8a;
     --color-text-primary: #ffffff;
-    --color-text-secondary: #b0b0b0;
-    --color-text-muted: #666666;
+    --color-text-secondary: #a8c5d8;
+    --color-text-muted: #5a7a8a;
 
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -506,84 +506,182 @@ img {
     animation: fadeIn 1s ease 0.9s forwards;
 }
 
-/* Floating Icons */
-.floating-icon {
+/* Brain Image Container */
+/* Brain Image Container */
+.brain-container {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    /* Increased size */
+    height: 200%;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(10px);
-    transition: var(--transition-normal);
-    box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+    z-index: -1;
+    /* Behind terminal and icons */
+    pointer-events: none;
 }
 
-.floating-icon svg {
-    width: 32px;
-    height: 32px;
-    color: var(--color-blue-accent);
+.brain-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+    /* Higher opacity for holographic look */
+    filter: drop-shadow(0 0 40px rgba(0, 212, 255, 0.5)) hue-rotate(10deg);
+    animation: brainPulse 8s ease-in-out infinite;
+    /* Removed rotation */
+}
+
+@keyframes brainPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 40px rgba(0, 212, 255, 0.4)) hue-rotate(10deg);
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 60px rgba(0, 255, 255, 0.7)) hue-rotate(10deg);
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes brainRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating Bubble Icons */
+.floating-icon {
+    position: absolute;
+    width: 110px;
+    /* Fixed, uniform size */
+    height: 110px;
+    background: rgba(13, 26, 45, 0.05);
+    /* More transparent for glass effect */
+    backdrop-filter: blur(8px);
+    /* Glassmorphism blur */
+    -webkit-backdrop-filter: blur(8px);
+    /* Safari support */
+    border: none;
+    /* No solid border as requested */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    z-index: 5;
+    overflow: hidden;
+    /* Clip to circle */
+    box-shadow: 0 0 15px rgba(62, 184, 184, 0.3);
+    /* Outer glow instead of border */
+}
+
+
+.floating-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Fill the circle completely */
+    padding: 0;
+    /* No padding */
+    transition: var(--transition-normal);
+    opacity: 0.9;
+    /* Slightly transparent image to blend */
 }
 
 .floating-icon:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-blue-primary);
-    box-shadow: var(--glow-blue);
+    transform: translateY(-8px) scale(1.1);
+    background: rgba(13, 26, 45, 0.4);
+    /* Less transparent on hover */
+    border-color: var(--color-blue-accent);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    /* Glow on hover */
 }
 
+.floating-icon:hover img {
+    transform: scale(1.1);
+    /* Zoom effect inside bubble */
+    opacity: 1;
+}
+
+/* Adjust positions outward to avoid overlapping terminal controls */
 .icon-1 {
-    top: -15px;
-    left: -15px;
+    top: -65px;
+    /* Moved up */
+    left: -30px;
+    /* Moved left */
     animation: float 6s ease-in-out infinite;
 }
 
 .icon-2 {
-    top: -10px;
-    right: -15px;
+    top: -55px;
+    /* Moved up */
+    right: -30px;
+    /* Moved right */
     animation: float 7s ease-in-out infinite 0.5s;
 }
 
+/* Specific adjustment for Camera icon (icon-2) to reduce visual weight */
+.icon-2 img {
+    padding: 15px;
+    /* Shrinks the image content */
+}
+
+
 .icon-3 {
-    bottom: 20px;
-    left: -20px;
+    bottom: 80px;
+    left: -45px;
+    /* Moved left */
     animation: float 6.5s ease-in-out infinite 1s;
 }
 
 .icon-4 {
-    bottom: 10px;
-    right: -15px;
+    bottom: 60px;
+    right: -45px;
+    /* Moved right */
     animation: float 7.5s ease-in-out infinite 1.5s;
 }
+
+
 
 /* Terminal Window */
 .terminal-window {
     width: 100%;
-    max-width: 550px;
-    background: var(--color-bg-tertiary);
-    border: 1px solid var(--glass-border);
+    max-width: 480px;
+    background: rgba(13, 26, 45, 0.95);
+    border: 2px solid rgba(62, 184, 184, 0.5);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(62, 184, 184, 0.3),
+        0 20px 60px rgba(0, 0, 0, 0.5);
     transition: all 0.4s ease;
+    z-index: 2;
 }
 
 .terminal-window:hover {
     transform: translateY(-5px);
-    box-shadow: 0 25px 70px rgba(0, 102, 255, 0.3),
-        0 0 50px rgba(0, 255, 255, 0.2);
-    border-color: var(--color-blue-accent);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.4),
+        0 25px 70px rgba(0, 0, 0, 0.6);
+    border-color: var(--color-blue-secondary);
 }
 
 .terminal-header {
-    background: rgba(30, 30, 30, 0.95);
+    background: rgba(19, 34, 56, 0.98);
     padding: 12px 16px;
     display: flex;
     align-items: center;
     gap: 12px;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(62, 184, 184, 0.3);
 }
 
 .terminal-buttons {
@@ -613,7 +711,7 @@ img {
 .terminal-title {
     font-family: var(--font-mono);
     font-size: 0.875rem;
-    color: var(--color-text-secondary);
+    color: var(--color-blue-accent);
     flex: 1;
     text-align: center;
 }
@@ -621,10 +719,10 @@ img {
 .terminal-body {
     padding: 20px;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.8;
-    background: #0d1117;
-    min-height: 280px;
+    background: rgba(10, 22, 40, 0.98);
+    min-height: 250px;
 }
 
 .code-line {
